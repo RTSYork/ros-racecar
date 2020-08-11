@@ -1,0 +1,9 @@
+<!-- -*- mode: XML -*- -->
+<launch>
+  <arg name="joy_teleop_config" default="$(find racecar)/config/joy_teleop_remote.yaml" />
+
+  <rosparam file="$(arg joy_teleop_config)" command="load" />
+
+  <node pkg="racecar" type="joy_teleop.py" name="joy_teleop" />
+
+</launch>
