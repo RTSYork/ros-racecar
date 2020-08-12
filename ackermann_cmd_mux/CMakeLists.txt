@@ -52,3 +52,8 @@ install(DIRECTORY launch
 install(DIRECTORY param
         DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
 )
+
+catkin_install_python(PROGRAMS 
+    src/throttle_interpolator.py
+    DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/nodes
+)
