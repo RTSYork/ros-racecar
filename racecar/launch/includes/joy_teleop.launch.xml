@@ -1,10 +1,13 @@
 <!-- -*- mode: XML -*- -->
 <launch>
-  <arg name="joy_teleop_config" default="$(find racecar)/config/joy_teleop.yaml" />
+  <arg name="remote_joy" default="false"/>
+
+  <arg name="joy_teleop_config" default="$(find racecar)/config/joy_teleop.yaml" unless="$(arg remote_joy)" />
+  <arg name="joy_teleop_config" default="$(find racecar)/config/joy_teleop_remote.yaml" if="$(arg remote_joy)" />
 
   <rosparam file="$(arg joy_teleop_config)" command="load" />
 
-  <node pkg="joy" type="joy_node" name="joy_node" />
+  <node pkg="joy" type="joy_node" name="joy_node" unless="$(arg remote_joy)" />
 
   <node pkg="racecar" type="joy_teleop.py" name="joy_teleop" />
 

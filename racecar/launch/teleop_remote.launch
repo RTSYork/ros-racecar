@@ -1,9 +1,10 @@
 <!-- -*- mode: XML -*- -->
 <launch>
-  <arg name="run_camera" default="false"/>
+  <arg name="run_camera" default="true"/>
 
-  <include file="$(find racecar)/launch/includes/teleop_remote.launch.xml">
+  <include file="$(find racecar)/launch/teleop.launch">
     <arg name="run_camera" value="$(arg run_camera)" />
+    <arg name="remote_joy" value="true" />
   </include>
 
 </launch>

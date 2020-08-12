@@ -24,6 +24,7 @@
   <run_depend>rosbag</run_depend>
   <run_depend>rostopic</run_depend>
   <run_depend>rviz</run_depend>
+  <run_depend>cv_camera</run_depend>
 
   <!-- mapping -->
   <run_depend>gmapping</run_depend>

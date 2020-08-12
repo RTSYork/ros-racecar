@@ -87,6 +87,7 @@ catkin_package(
     rosbag
     rostopic
     rviz
+    cv_camera
     # mapping
     gmapping
     hector_mapping
