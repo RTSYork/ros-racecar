@@ -1,6 +1,7 @@
 <!-- -*- mode: XML -*- -->
 <launch>
   <arg name="run_camera" default="false"/>
+  <arg name="hd_camera" default="false"/>
   <arg name="remote_joy" default="false"/>
 
   <group ns="vesc">
@@ -19,6 +20,7 @@
   <!-- start imu, laser scanner and optionally camera -->
   <include file="$(find racecar)/launch/includes/sensors.launch.xml">
     <arg name="run_camera" value="$(arg run_camera)" />
+    <arg name="hd_camera" value="$(arg hd_camera)" />
   </include>
 
   <!-- static transforms, e.g. base_link to imu -->

@@ -1,0 +1,26 @@
+rate: 30.0  # (double, default: 30.0) – publish rate [Hz].
+device_id: 0  # (int, default: 0) – capture device id.
+device_path: /dev/car/camera  # (string, default: "") – path to camera device file, e. g. /dev/video0.
+frame_id: camera  # (string, default: "camera") – frame_id of message header.
+image_width: 640  # (int) – try to set capture image width.
+image_height: 480  # (int) – try to set capture image height.
+capture_delay: 0  # (double, default: 0) – estimated duration of capturing and receiving the image.
+rescale_camera_info: false  # (bool, default: false) – rescale camera calibration info automatically.
+cv_cap_prop_frame_width: 640
+cv_cap_prop_frame_height: 480
+cv_cap_prop_fps: 30.0
+cv_cap_prop_fourcc: 1196444237.0  # MJPG?
+# cv_cap_prop_pos_msec: 
+# cv_cap_prop_pos_avi_ratio: 
+# cv_cap_prop_frame_count: 
+# cv_cap_prop_format: 
+# cv_cap_prop_mode: 
+# cv_cap_prop_brightness: 
+# cv_cap_prop_contrast: 
+# cv_cap_prop_saturation: 
+# cv_cap_prop_hue: 
+# cv_cap_prop_gain: 
+# cv_cap_prop_exposure: 
+# cv_cap_prop_convert_rgb: 
+# cv_cap_prop_rectification: 
+# cv_cap_prop_iso_speed: 

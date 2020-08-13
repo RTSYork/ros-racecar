@@ -1,9 +1,13 @@
 <!-- -*- mode: XML -*- -->
 <launch>
   <arg name="run_camera" default="false"/>
+  <arg name="hd_camera" default="false"/>
   <arg name="lidar_config" default="$(find racecar)/config/lidar.yaml" />
   <arg name="razor_config" default="$(find racecar)/config/razor.yaml" />
-  <arg name="camera_config" default="$(find racecar)/config/camera.yaml" />
+  <arg name="camera_config" default="$(find racecar)/config/camera-1280x720.yaml" if="$(arg hd_camera)" />
+  <arg name="camera_config" default="$(find racecar)/config/camera-640x480.yaml" unless="$(arg hd_camera)" />
+  <arg name="camera_info" value="file://$(find racecar)/config/brio-info-1280x720.yaml" if="$(arg hd_camera)" />
+  <arg name="camera_info" value="file://$(find racecar)/config/brio-info-640x480.yaml" unless="$(arg hd_camera)" />
 
   <!-- lidar -->
   <node pkg="urg_node" type="urg_node" name="laser_node">
@@ -18,7 +22,7 @@
   <!-- camera -->
   <node pkg="cv_camera" type="cv_camera_node" name="camera_node" if="$(arg run_camera)">
     <rosparam file="$(arg camera_config)" command="load" />
-    <param name="camera_info_url" value="file://$(find racecar)/config/brio-info-640x480.yaml" />
+    <param name="camera_info_url" value="$(arg camera_info)" />
   </node>
 
 </launch>
