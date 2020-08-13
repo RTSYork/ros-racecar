@@ -2,11 +2,13 @@
 <launch>
   <arg name="run_camera" default="true"/>
   <arg name="hd_camera" default="false"/>
+  <arg name="mapping" default="false"/>
 
   <include file="$(find racecar)/launch/teleop.launch">
     <arg name="run_camera" value="$(arg run_camera)" />
     <arg name="hd_camera" value="$(arg hd_camera)" />
     <arg name="remote_joy" value="true" />
+    <arg name="mapping" value="$(arg mapping)" />
   </include>
 
 </launch>
